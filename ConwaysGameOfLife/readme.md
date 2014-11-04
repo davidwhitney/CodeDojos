@@ -71,7 +71,7 @@ Tick 1:
 | &nbsp;  |   |   |   |
 |   |   |   | &nbsp;  |
 
-There are lots of [example patterns on wikipedia](http://en.wikipedia.org/wiki/Conway's_Game_of_Life)
+There are lots of [example patterns on wikipedia](http://en.wikipedia.org/wiki/Conway's_Game_of_Life#Examples_of_pattern)
 
 ---
 
