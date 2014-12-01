@@ -4,9 +4,9 @@ We're going to write a program that renders images as ASCII art into the console
 
 Your program will need to read in an image, in whatever format you want to support, and respond with a text representation of the image that fits in the terminal.
 
-For example, given the following .PNG [image of a duck](ducky.png)
+For example, given the following .PNG [image of a duck](Ducky.png)
 
-<img src="ducky.png" width="200" height="200"/>
+<img src="Ducky.png" width="200" height="200"/>
 
 Your program might output something like
 
