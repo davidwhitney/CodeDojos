@@ -44,3 +44,4 @@ This is derived from a quiz posted on rubyquiz.com see: http://rubyquiz.com/quiz
  * Perhaps reduce the size of the image?
  * There are built in image manipulation classes in .NET - GDI+ ones in System.Drawing, WPF ones in System.Windows.Media.Imaging (BitmapFrame)
  * There's a package called ImageResizer.NET that's slow, but works.
+ * Can you reduce the concept of a colour to a single number?
