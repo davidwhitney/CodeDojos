@@ -33,6 +33,12 @@ The above sample would be rendered in XML as
       ...
     </gedcom>
 
+* "0 @I1@ INDI". This starts a new subtree of type INDI (individual). The id for this individual is "@I1@".
+* "1 NAME Jamis Gordon /Buck/". This starts a NAME subtree with a value of "Jamis Gordon /Buck/".
+* "2 SURN Buck". This is a subelement of the NAME subtree, of type SURN ("surname").
+* "2 GIVN Jamis Gordon". As SURN, but specifies the given name of the individual.
+* "1 SEX M". Creates a new subelement of the INDI element, of type "SEX" (i.e., "gender").
+
 This is a simplified version of GEDCOM, the real spec is very broad and features many other elements and relationship types - produce a file format converter that isn't looking for specific tags.
 
 ### Story 1 - File format conversion
