@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace ClassLibrary1
@@ -23,65 +19,100 @@ namespace ClassLibrary1
         }
 
         [Test]
+        public void That_GivenStringThatIsNotNotEqual_Throws()
+        {
+            Assert.Throws<Exception>(() => Check.That("hi", IsTotally.Not.Not.EqualTo("hello")));
+        }
+
+        [Test]
         public void That_GivenStringThatIsNotEqual_Works()
         {
             Check.That("hi", IsTotally.Not.EqualTo("hello"));
+        }
+
+        [Test]
+        public void That_GivenStringThatIsNotNotEqual_Works()
+        {
+            Check.That("hi", IsTotally.Not.Not.EqualTo("hi"));
         }
     }
 
     public static class IsTotally
     {
-        private static readonly ComparisonRoot Root;
-
-        static IsTotally()
-        {
-            Root = new ComparisonRoot();
-        }
+        private static readonly IAssertionRoot Default = new IsTotallyInstance(ComparisonSettings.Regular);
 
         public static IPerformAComparison EqualTo(object objB)
         {
-            return Root.EqualTo(objB);
+            return Default.EqualTo(objB);
         }
 
-        public static ComparisonRoot Not
+        public static IAssertionRoot Not
         {
-            get { return new ConditionInverter(); }
-        }
-    }
-
-    public class ComparisonRoot
-    {
-        public virtual IPerformAComparison EqualTo(object objB)
-        {
-            return new CheckEquality(objB);
+            get { return new IsTotallyInstance(ComparisonSettings.Negated); }
         }
     }
 
-    public class ConditionInverter : ComparisonRoot
+    public class ComparisonSettings
     {
-        public override IPerformAComparison EqualTo(object objB)
+        public static ComparisonSettings Regular = new ComparisonSettings();
+        public static ComparisonSettings Negated = new ComparisonSettings();
+
+        public ComparisonSettings GetOther()
         {
-            return new Invert(base.EqualTo(objB));
+            return this == Regular ? Negated : Regular;
+        }
+    }
+
+    public class IsTotallyInstance : IAssertionRoot
+    {
+        private readonly ComparisonSettings _comparisonSettings;
+
+        public IsTotallyInstance(ComparisonSettings comparisonSettings)
+        {
+            _comparisonSettings = comparisonSettings;
         }
 
-        private class Invert : IPerformAComparison
+        public IPerformAComparison EqualTo(object objB)
         {
-            private readonly IPerformAComparison _regular;
+            return Shim(new CheckEquality(objB));
+        }
 
-            public Invert(IPerformAComparison regular)
-            {
-                _regular = regular;
-            }
+        public IAssertionRoot Not
+        {
+            get { return new IsTotallyInstance(_comparisonSettings.GetOther()); }
+        }
 
-            public bool Execute(object objA)
-            {
-                return !_regular.Execute(objA);
-            }
+        public IPerformAComparison Shim(IPerformAComparison comparison)
+        {
+            return _comparisonSettings == ComparisonSettings.Negated
+                ? new Invert(comparison)
+                : comparison;
+        }
+    }
 
-            public Exception GenerateError(object objA)
-            {
-                return _regular.GenerateError(objA);
-            }
+    public interface IAssertionRoot
+    {
+        IPerformAComparison EqualTo(object objB);
+        IAssertionRoot Not { get; }
+    }
+
+    public class Invert : IPerformAComparison
+    {
+        private readonly IPerformAComparison _regular;
+
+        public Invert(IPerformAComparison regular)
+        {
+            _regular = regular;
+        }
+
+        public bool Execute(object objA)
+        {
+            return !_regular.Execute(objA);
+        }
+
+        public Exception GenerateError(object objA)
+        {
+            return _regular.GenerateError(objA);
         }
     }
 
