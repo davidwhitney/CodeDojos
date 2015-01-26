@@ -4,6 +4,8 @@ You work in a nice, friendly, modern software development company - and as a res
 
 But alas! Somebody keeps on breaking builds! In order to convince people that breaking builds is a really bad idea, you decide to build an alarm that rings every time a build is broken.
 
+(Example API response in appendix)
+
 ---
 
 ### Getting the build status for a build
@@ -20,6 +22,7 @@ But alas! Somebody keeps on breaking builds! In order to convince people that br
     An alarm rings
 
     Accept: Can hear alarm!
+            If the last build failed, don't ring the alarm again
 
 ### Alerting on multiple builds
 
@@ -51,3 +54,81 @@ But alas! Somebody keeps on breaking builds! In order to convince people that br
     As a developer
     I want to trivially configure the alarm to ring for many builds
     With as little configuration as possible.
+
+### Stretch goal
+
+    As a developer
+    I want to know a build failed in ways other than a ringing alarm
+    Because I can miss an alarm ringing
+
+# Example call
+
+GET http://tempuri.org/build/status
+
+
+## Example API call response
+
+    {
+      "Projects": [
+        {
+          "Id": "0b33a915-8fa2-4edc-9a33-8a51ace565a2",
+          "Name": "MyRockingApp",
+          "Configurations": [
+            {
+              "Id": "2eaed57c-28e8-4ce4-a0e7-112f4077aa0a",
+              "Name": "Build",
+              "CurrentStatus": "Passing",
+              "Message": null
+            },
+            {
+              "Id": "59c4b0f8-d5d4-449a-841b-c1b180018a7e",
+              "Name": "Deploy - Dev",
+              "CurrentStatus": "Passing",
+              "Message": null
+            },
+            {
+              "Id": "0e6b8f47-a893-45fb-989b-08b5882a49b3",
+              "Name": "Deploy - QA",
+              "CurrentStatus": "Passing",
+              "Message": null
+            },
+            {
+              "Id": "1ac4bf7d-dfca-49a3-9100-546a9921517a",
+              "Name": "Deploy - Production",
+              "CurrentStatus": "Passing",
+              "Message": null
+            }
+          ]
+        },
+        {
+          "Id": "bbc484fb-e673-4ec4-9a7f-faf3279bdd0b",
+          "Name": "MySuckingApp",
+          "Configurations": [
+            {
+              "Id": "ab32d9f8-1914-4966-a8c4-dee195065a40",
+              "Name": "Build",
+              "CurrentStatus": "Failing",
+              "Message": null
+            },
+            {
+              "Id": "2d80a96a-b51a-438c-96ac-c99f9a83e3e5",
+              "Name": "Deploy - Dev",
+              "CurrentStatus": "Passing",
+              "Message": null
+            },
+            {
+              "Id": "110b79bf-b742-4dc8-94f4-a43199a19675",
+              "Name": "Deploy - QA",
+              "CurrentStatus": "Inconclusive",
+              "Message": null
+            },
+            {
+              "Id": "89f7ee03-c9a4-40b7-acb6-e87333e7ab1a",
+              "Name": "Deploy - Production",
+              "CurrentStatus": "Passing",
+              "Message": null
+            }
+          ]
+        }
+      ]
+    }
