@@ -45,3 +45,9 @@ But alas! Somebody keeps on breaking builds! In order to convince people that br
 
       Accept: Mutiple servers monitored
               Servers run different build software / have different APIs
+
+### Configuration
+
+    As a developer
+    I want to trivially configure the alarm to ring for many builds
+    With as little configuration as possible.
