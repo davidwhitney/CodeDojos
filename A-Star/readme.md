@@ -34,6 +34,7 @@ Paths can be diagonal.
 * \#: Traversable node
 * @: Blocked / un-traversable
 
+<pre>
 
     ##########D####
     ###############
@@ -44,6 +45,7 @@ Paths can be diagonal.
     ####S##########
     ###############
 
+</pre>
 
 ## Story 1 - Display the path scores
 
