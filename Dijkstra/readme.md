@@ -1,7 +1,9 @@
 Dijkstra's Algorithm for path-finding
 ======================================
 
-Dijkstra thought about shortest path problem when working at Mathematical Center in Amsterdam in 1956 as a program to demonstrate capabilities of the new computer called ARMAC. His objective was to choose both a problem as well as answer (that will be produced by computer) that non-computing people can understand. He designed the shortest path algorithm in about 20 minutes without aid of paper and pen and later implemented it for ARMAC for slightly simplified transportation map of 64 cities in Netherland.
+Dijkstra thought about shortest path problem when working at Mathematical Center in Amsterdam in 1956 as a program to demonstrate capabilities of the new computer called ARMAC.
+
+His objective was to choose both a problem as well as answer (that will be produced by computer) that non-computing people can understand. He designed the shortest path algorithm in about 20 minutes without aid of paper and pen and later implemented it for ARMAC for slightly simplified transportation map of 64 cities in Netherland.
 
 The algorithm and the A* variant are used for path finding in video games, attempting traveling salesman style problems, and are pretty fun to see working.
 
@@ -12,7 +14,7 @@ Algorithm
 
 **2)** Set the initial node as current. Mark all other nodes unvisited. Create a set of all the unvisited nodes called the unvisited set.
 
-**3)** For the current node, **consider all of its unvisited neighbors** and calculate their tentative distances.
+**3)** For the current node, **consider all of its unvisited neighbors** and calculate their tentative distances.  The tentative distance can be as simple as the width + height offset of node elements in a 2D array.
 
         Compare the newly calculated tentative distance to the current assigned value and assign the smaller one.
 
@@ -28,7 +30,7 @@ Algorithm
 
 **5)** If the destination node has been marked visited (when planning a route between two specific nodes) **or** if the smallest tentative distance among the nodes in the unvisited set is infinity (when planning a complete traversal; occurs when there is no connection between the initial node and remaining unvisited nodes), **then stop**. **The algorithm has finished.**
 
-**6)** Select the unvisited node that is marked with the smallest tentative distance, and set it as the new "current node" then go back to step 3.
+**6)** Select the unvisited node that is marked with the **smallest tentative distance**, and set it as the new "current node" then go back to step 3.
 
 
 Build a pathfinder
