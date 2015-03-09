@@ -61,7 +61,31 @@ I will pathfind diagonally
 </pre>
 
 Accept
+
     * Path output to console
     * Path marked with X's
     
 # Pathfinding around a blockaid
+
+As an Pathfinding AI
+Given a 3x3 block with a blockaid
+I will pathfind around the blockaid
+
+<pre>
+    S..
+    ##.
+    D..
+</pre>
+
+# Pathfinding around slow terrain
+
+As an Pathfinding AI
+Given a 3x3 block where the direct route is slow
+I will pathfind around the slow path
+
+<pre>
+    S..
+    V..
+    D..
+</pre>
+
