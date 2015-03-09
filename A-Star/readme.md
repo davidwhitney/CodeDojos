@@ -26,47 +26,42 @@ You can calculate the distance from the tile to the goal using **Manhattan dista
 Build a pathfinder
 ===================
 
-We want to find the shortest path from S to D given the node layout below.
+We're going to implement the A* algorithm to pathfind our way across maps like the one provided below.
 Paths can be diagonal.
 
-* S: Starting point
-* D: Destination
-* \#: Traversable node
-* @: Blocked / un-traversable
+* **S** Starting point
+* **D** Destination
+* **.** Traversable node - difficultly cost 1
+* **V** Forest - difficulty cost 5
+* **#** Blocked / un-traversable
 
 <pre>
 
-    ##########D####
-    ###############
-    ###@@@@@@@@####
-    ########@@@####
-    ##########@####
-    ###############
-    ####S##########
-    ###############
+    ..........D.VVV
+    ..........VVVVV
+    ..#########VVVV
+    ......#####VVVV
+    ........###VVVV
+    ...........VVVV
+    .............VV
+    .............S.
 
 </pre>
 
-## Story 1 - Display the path scores
+# Simple pathfinding
 
-    As a user
-    When I provide two points
-    I want see the #'s replaced with distance scores
+As an Pathfinding AI
+Given a 3x3 block
+I will pathfind diagonally
 
-        Accept: Output to screen
+<pre>
+    S..
+    ...
+    ..D
+</pre>
 
-## Story 2 - Select the shortest route
-
-    As a user
-    I want to visualise the shortest path
-    So I can marvel in its wonder.
-
-        Accept: Some kind of visualisation on screen
-
-## Story 3 - Animate the shortest path
-
-    As a user
-    I want to see an animation of the S walking towards the D
-    Because that'd be cool!
-
-        Accept: Stretch goal! Walk the path :)
+Accept
+    * Path output to console
+    * Path marked with X's
+    
+# Pathfinding around a blockaid
