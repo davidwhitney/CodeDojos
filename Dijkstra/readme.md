@@ -14,7 +14,11 @@ Algorithm
 
 **2)** Set the initial node as current. Mark all other nodes unvisited. Create a set of all the unvisited nodes called the unvisited set.
 
-**3)** For the current node, **consider all of its unvisited neighbors** and calculate their tentative distances.  The tentative distance can be as simple as the width + height offset of node elements in a 2D array.
+**3)** For the current node, **consider all of its unvisited neighbors** and calculate their tentative distances.
+
+You can use a "Manhatten score" to work out a tentative distance:
+
+>  (x1 - x2) + (y1 - y2)
 
         Compare the newly calculated tentative distance to the current assigned value and assign the smaller one.
 
