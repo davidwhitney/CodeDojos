@@ -89,3 +89,6 @@ I will pathfind around the slow path
     D..
 </pre>
 
+# Acknowledgements
+
+This is derived from a Rubyquiz.com quiz here - http://rubyquiz.com/quiz98.html
