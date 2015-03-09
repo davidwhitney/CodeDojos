@@ -37,6 +37,7 @@ Build a pathfinder
 ===================
 
 We want to find the shortest path from S to D given the node layout below.
+Paths can be diagonal.
 
 * S: Starting point
 * D: Destination
