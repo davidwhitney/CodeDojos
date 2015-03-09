@@ -31,9 +31,9 @@ Paths can be diagonal.
 
 * **S** Starting point
 * **D** Destination
-* **.** Traversable node - difficultly cost 1
+* **.** Flat ground - difficultly cost 1
 * **V** Forest - difficulty cost 5
-* **#** Blocked / un-traversable
+* **#** Cliffs / un-traversable
 
 <pre>
 
