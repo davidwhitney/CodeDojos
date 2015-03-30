@@ -60,3 +60,54 @@ The syntax of comment blocks varies from language to language - pick one of your
       /// through the remarks tag</remarks>
       public class SomeClass
       {....
+
+
+## Example file
+
+```csharp
+/// <summary>
+/// Good comment
+/// </summary>
+public class Test
+{
+  /// <summary>
+  /// Good comment
+  /// </summary>
+  public void Method()
+  {
+    // Console.WriteLine("haha"); // BAD COMMENT!
+
+    Console.WriteLine("Hi"); // Good comment
+
+    // Good comment
+    Console.WriteLine("with some narrative");
+
+    /*
+    * Good comment
+    */
+
+    //Console.WriteLine("Bad");
+    //Console.WriteLine("Bad");
+    //Console.WriteLine("Bad");
+    //Console.WriteLine("Bad");
+    //Console.WriteLine("Bad");
+
+    /*
+    Console.WriteLine("Very bad");
+    Console.WriteLine("Very bad");
+    Console.WriteLine("Very bad");
+    Console.WriteLine("Very bad");
+    Console.WriteLine("Very bad");
+    Console.WriteLine("Very bad");
+    Console.WriteLine("Very bad");*/
+
+    /*
+    Good comment
+    */
+    Console.WriteLine("Some code");
+
+    //Console.WriteLine("Bad comment");
+    Console.WriteLine("Good code");
+  }
+}
+```
