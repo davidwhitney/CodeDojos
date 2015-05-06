@@ -2,13 +2,13 @@
 
 To quote Martin Fowler:
 
-    It's common for software systems to make remote calls to software running in different processes, probably on different machines across a network.
+> It's common for software systems to make remote calls to software running in different processes, probably on different machines across a network.
 
-    One of the big differences between in-memory calls and remote calls is that remote calls can fail, or hang without a response until some timeout limit is reached.
+>One of the big differences between in-memory calls and remote calls is that remote calls can fail, or hang without a response until some timeout limit is reached.
 
-    What's worse if you have many callers on a unresponsive supplier, then you can run out of critical resources leading to cascading failures across multiple systems.
+>What's worse if you have many callers on a unresponsive supplier, then you can run out of critical resources leading to cascading failures across multiple systems.
 
-    In his excellent book Release It, Michael Nygard popularized the Circuit Breaker pattern to prevent this kind of catastrophic cascade.
+>In his excellent book Release It, Michael Nygard popularized the Circuit Breaker pattern to prevent this kind of catastrophic cascade.
 
 
 Circuit breakers are very simple - they:
