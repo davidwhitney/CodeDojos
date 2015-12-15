@@ -1,9 +1,8 @@
 This is borrowed wholesale from the excellent "Advent of Code" Day 6 challange - http://adventofcode.com/day/6
-
 -----------------
 # Christmas Lights
 
---- Day 6: Probably a Fire Hazard ---
+## Day 6: Probably a Fire Hazard
 
 Because your neighbors keep defeating you in the holiday house decorating contest year after year, you've decided to deploy one million lights in a 1000x1000 grid.
 
@@ -15,27 +14,26 @@ To defeat your neighbors this year, all you have to do is set up your lights by 
 
 For example:
 
-turn on 0,0 through 999,999 would turn on (or leave on) every light.
-toggle 0,0 through 999,0 would toggle the first line of 1000 lights, turning off the ones that were on, and turning on the ones that were off.
-turn off 499,499 through 500,500 would turn off (or leave off) the middle four lights.
+* turn on 0,0 through 999,999 would turn on (or leave on) every light.
+* toggle 0,0 through 999,0 would toggle the first line of 1000 lights, turning off the ones that were on, and turning on the ones that were off.
+* turn off 499,499 through 500,500 would turn off (or leave off) the middle four lights.
+
 After following the instructions, how many lights are lit?
 
 
---- Part Two ---
+## Part Two
 
 You just finish implementing your winning light pattern when you realize you mistranslated Santa's message from Ancient Nordic Elvish.
 
 The light grid you bought actually has individual brightness controls; each light can have a brightness of zero or more. The lights all start at zero.
 
-The phrase turn on actually means that you should increase the brightness of those lights by 1.
-
-The phrase turn off actually means that you should decrease the brightness of those lights by 1, to a minimum of zero.
-
-The phrase toggle actually means that you should increase the brightness of those lights by 2.
+* The phrase turn on actually means that you should increase the brightness of those lights by 1.
+* The phrase turn off actually means that you should decrease the brightness of those lights by 1, to a minimum of zero.
+* The phrase toggle actually means that you should increase the brightness of those lights by 2.
 
 What is the total brightness of all lights combined after following Santa's instructions?
 
 For example:
 
-turn on 0,0 through 0,0 would increase the total brightness by 1.
-toggle 0,0 through 999,999 would increase the total brightness by 2000000.
+* turn on 0,0 through 0,0 would increase the total brightness by 1.
+* toggle 0,0 through 999,999 would increase the total brightness by 2000000.
