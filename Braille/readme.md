@@ -25,20 +25,26 @@ There are a number of different versions of Braille:
 
 Uncontracted or Grade 1
 
-        Which consists of the 26 standard letters of the alphabet and punctuation. It is only used by people who are first starting to read Braille.
+        Which consists of the 26 standard letters of the alphabet and punctuation.
+        It is only used by people who are first starting to read Braille.
   
 ![alt text](uncontracted.gif "Patterns")
 ![alt text](punc.gif "Patterns")
       
 Contracted or Grade 2
 
-        Which consists of the 26 standard letters of the alphabet, punctuation and contractions. The contractions are employed to save space because a Braille page cannot fit as much text as a standard printed page. Books, signs in public places, menus, and most other Braille materials are written in Contracted Braille.
+        Which consists of the 26 standard letters of the alphabet, 
+        punctuation and contractions. The contractions are employed
+        to save space because a Braille page cannot fit as much text as a standard printed page. Books, signs in public places, menus, and most other Braille materials are written in Contracted Braille.
         
 ![alt text](grade2.gif "Patterns")
 
 Grade 3
 
-        Which is used mainly in personal letters, diaries, and notes, and also in literature to a limited extent. It is a kind of shorthand, with entire words shortened to a few letters. There is no official standard for this version of Braille.
+        Which is used mainly in personal letters, diaries, and notes,
+        and also in literature to a limited extent. It is a kind of shorthand,
+        with entire words shortened to a few letters.
+        There is no official standard for this version of Braille.
 
 
 Build a translator
