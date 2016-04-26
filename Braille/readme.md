@@ -35,7 +35,9 @@ Contracted or Grade 2
 
         Which consists of the 26 standard letters of the alphabet, 
         punctuation and contractions. The contractions are employed
-        to save space because a Braille page cannot fit as much text as a standard printed page. Books, signs in public places, menus, and most other Braille materials are written in Contracted Braille.
+        to save space because a Braille page cannot fit as much text as
+        a standard printed page. Books, signs in public places, menus,
+        and most other Braille materials are written in Contracted Braille.
         
 ![alt text](grade2.gif "Patterns")
 
