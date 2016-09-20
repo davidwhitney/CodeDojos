@@ -1,6 +1,6 @@
 # Concordance Kata
 
-A concordance is an alphabetical list of the principal words used in a
+A concordance (https://en.wikipedia.org/wiki/Concordance_%28publishing%29) is an alphabetical list of the principal words used in a
  book or body of work, listing every instance of each word with its
   immediate context. 
   
